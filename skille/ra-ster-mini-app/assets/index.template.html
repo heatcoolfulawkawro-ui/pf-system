@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>NAZWA NARZĘDZIA — RA-STER</title>
+<script>
+// Skróty na ekranie głównym telefonu potrafią pokazywać starą wersję z cache.
+// Ten kod sprawdza w tle prawdziwą wersję na serwerze (z pominięciem cache)
+// i przeładowuje stronę, jeśli jest nowsza. Zmień tylko nazwę klucza.
+(function(){
+  try{
+    fetch(location.pathname, { method:'HEAD', cache:'no-store' }).then(function(res){
+      var v = res.headers.get('last-modified') || res.headers.get('etag');
+      if(!v) return;
+      var stored = localStorage.getItem('NARZEDZIE_page_version');
+      localStorage.setItem('NARZEDZIE_page_version', v);
+      if(stored && stored !== v) location.reload();
+    }).catch(function(){});
+  }catch(e){}
+})();
+</script>
+<style>
+  :root{
+    --bg:#12181d; --panel:#1b232a; --panel2:#212b33; --line:#2c3841;
+    --ink:#e8edf1; --ink-dim:#8fa0ab; --amber:#e8a33d; --green:#4caf7d;
+    --red:#d9695f; --blue:#5b9bd5; --radius:10px;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-text-size-adjust:100%; }
+  header{ position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 12px; border-bottom:1px solid var(--line); }
+  header h1{ margin:0; font-size:17px; }
+  header h1 .vertag{ font-size:10px; font-weight:400; color:var(--ink-dim); background:var(--panel2); border:1px solid var(--line); border-radius:5px; padding:1px 5px; margin-left:6px; vertical-align:middle; }
+  header .who{ font-size:11px; color:var(--ink-dim); margin-top:2px; display:flex; align-items:center; gap:6px; }
+  .statusdot{ width:10px; height:10px; border-radius:50%; background:var(--ink-dim); }
+  .statusdot.ok{ background:var(--green); } .statusdot.fail{ background:var(--red); }
+  main{ padding:10px; }
+  .card{ background:var(--panel); border:1px solid var(--line); border-radius:var(--radius); padding:12px; margin-bottom:8px; }
+  input, textarea, select{ width:100%; background:var(--panel2); border:1px solid var(--line); color:var(--ink); border-radius:8px; padding:9px 8px; font-size:16px; } /* 16px = iOS nie zoomuje przy fokusie */
+  button.cta{ width:100%; background:var(--amber); color:#20140a; border:none; border-radius:8px; padding:11px; font-size:14px; font-weight:700; margin-top:8px; }
+  .savetag{ position:fixed; top:8px; right:10px; z-index:9; font-size:10px; color:var(--ink-dim); opacity:0; transition:opacity .3s; }
+  .savetag.show{ opacity:1; }
+  .testbtn{ display:block; margin:24px auto 12px; background:none; border:none; color:var(--line); font-size:10px; }
+</style>
+</head>
+<body>
+
+<div class="savetag" id="savetag">zapisano</div>
+
+<header>
+  <!-- Przy KAŻDYM wydaniu: podbij vertag i ustaw buildtag na bieżący czas. -->
+  <h1>Nazwa narzędzia <span class="vertag">v0.1</span></h1>
+  <div class="who"><span class="statusdot" id="statusDot" title="Połączenie z Arkuszem"></span>RA-STER · <span class="buildtag">DD.MM.RRRR GG:MM</span></div>
+</header>
+
+<main>
+  <div class="card">
+    <label for="notatka">Przykładowe pole (autosave)</label>
+    <textarea id="notatka" rows="3" placeholder="Wpisz coś — zapisze się samo"></textarea>
+  </div>
+</main>
+
+<button class="testbtn" id="btnTestSave">test zapisu</button>
+
+<script>
+// Stały adres Web App — po pierwszym wdrożeniu NIE MOŻE się zmienić
+// (wdrażaj zawsze z --deploymentId, patrz references/gas-clasp-autodeploy.md).
+const GAS_URL = 'https://script.google.com/macros/s/<DEPLOYMENT_ID>/exec';
+const KEY = 'narzedzie_v1_dane';   // jeden klucz = jeden JSON; format zmieniaj tylko z migracją
+
+let data = { notatka:'' };
+
+function flashSaved(txt){
+  const el = document.getElementById('savetag');
+  el.textContent = txt; el.classList.add('show');
+  clearTimeout(flashSaved.t); flashSaved.t = setTimeout(()=>el.classList.remove('show'), 1200);
+}
+
+// localStorage = natychmiastowy bufor (działa offline); Arkusz = zapis w tle.
+function save(){
+  localStorage.setItem(KEY, JSON.stringify(data));
+  flashSaved('zapisano lokalnie');
+  // text/plain — NIE application/json: inaczej preflight CORS + przekierowanie
+  // 302 zamienia POST na GET i dane po cichu się nie zapisują.
+  fetch(GAS_URL, {
+    method:'POST',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify({ key: KEY, value: JSON.stringify(data) })
+  }).then(()=>flashSaved('zapisano w Arkuszu')).catch(()=>{});
+}
+
+async function load(){
+  try{ const raw = localStorage.getItem(KEY); if(raw) data = Object.assign(data, JSON.parse(raw)); }catch(e){}
+  render();
+  try{
+    const res = await fetch(`${GAS_URL}?key=${KEY}`);
+    const text = res.ok ? await res.text() : '';
+    if(text && text.trim()){ data = Object.assign(data, JSON.parse(text)); localStorage.setItem(KEY, JSON.stringify(data)); render(); }
+  }catch(e){}
+}
+
+async function checkConnection(){
+  const dot = document.getElementById('statusDot');
+  try{ const res = await fetch(`${GAS_URL}?key=__ping__`); dot.className = 'statusdot ' + (res.ok?'ok':'fail'); }
+  catch(e){ dot.className = 'statusdot fail'; }
+}
+
+function render(){
+  const ta = document.getElementById('notatka');
+  if(document.activeElement !== ta) ta.value = data.notatka || '';
+}
+
+// Przy wpisywaniu NIE przebudowuj DOM-u (telefon gubi fokus) — tylko zapis.
+document.getElementById('notatka').addEventListener('input', (e)=>{ data.notatka = e.target.value; save(); });
+
+// Dyskretny test połączenia — 10 sekund diagnozy zamiast zgadywania.
+document.getElementById('btnTestSave').addEventListener('click', async ()=>{
+  try{
+    const res = await fetch(GAS_URL, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'},
+      body: JSON.stringify({ key:'TEST', value:'HELLO_' + Date.now() }) });
+    alert('Status: ' + res.status + '\nOdpowiedź: ' + await res.text());
+  }catch(err){ alert('Fetch się nie wykonał: ' + err.message); }
+});
+
+load();
+checkConnection();
+</script>
+</body>
+</html>
