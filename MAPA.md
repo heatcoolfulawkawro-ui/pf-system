@@ -14,8 +14,8 @@ przegląd. Właściciel GitHub: `heatcoolfulawkawro-ui`. Adres appek:
 | Wydatki domowe | `wydatki-domowe` | budżet domowy, paragony → Gemini | Szef + żona | v0.4+, produkcja |
 | Gotówka PF | `gotowka-pf` | pula gotówki, ile zostało, rytm wydawania | Paweł, Zuzia | produkcja |
 | Narzędzia PF (rozdzielacz) | `heatcoolfulawkawro-ui.github.io` | strona startowa z linkami do appek | Szef | produkcja |
-| HVAC Notatki | `AGENT_JOHN` | wizyty serwisowe i urządzenia, AI (Gemini) | ? | stan: ? brak `CLAUDE.md` |
-| PF-Protokoły | `pf-protokoly` | baza klientów / obiektów / urządzeń (V1) | ? | stan: ? brak `CLAUDE.md` |
+| HVAC Notatki | `AGENT_JOHN` | wizyty serwisowe i urządzenia, AI (Gemini) | — | **porzucone** (02.10.2026); kod może posłużyć jako materiał |
+| PF-Protokoły | `pf-protokoly` | baza klientów / obiektów / urządzeń (V1) | — | **porzucone** (02.10.2026); kod może posłużyć jako materiał |
 
 Wspólne mechanizmy: skrypt wykrywania nowej wersji (ten sam we wszystkich od 30.09.2026),
 „rodzina PIN-u PF” (zmiana PIN-u konta PF synchronizowana między appkami).
