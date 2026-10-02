@@ -9,7 +9,12 @@
 - Inżynier, branża HVAC / chłodnictwo. Nie programista.
 - Firma **RA-STER**: Szef + 2 wspólników + 4 serwisantów. Rola Szefa: **mieszana** — zarząd,
   wyceny i oferty, a do tego teren/serwis. Wspólnicy: każdy ma swój obszar (kto co: ?).
-- Drugi temat firmowy: **SP HNC** (teksty ustaw w `I:\HNC FIRMA\20_USTAWY\`) — czym jest, rola: ?
+- Struktura firm (wywiad 02.10.2026, blok B):
+  - **SP CS sp. z o.o.** (nazwa robocza) — główna spółka OPERACYJNA, 3 wspólników.
+    Czy to ten sam podmiot co marka RA-STER: ? (do potwierdzenia)
+  - **SP HNC sp. z o.o.** — spółka Szefa, PODWYKONAWCA SP CS. Każdy wspólnik ma swój podmiot:
+    (1) narzędzie do fakturowania spółki głównej, (2) możliwość robienia zleceń, których
+    spółka główna nie może się podjąć. Teksty ustaw: `I:\HNC FIRMA\20_USTAWY\`.
 
 ## RA-STER (wywiad 02.10.2026, blok A)
 
@@ -26,6 +31,16 @@
   fakturowanie (co zafakturowane, przeglądy z umów), koszty firmy.
 - KSeF: Claude może czytać faktury **z plików eksportu** (wrzuca Szef), bez stałego dostępu.
 - Z tego, co budujemy, mają korzystać też **wspólnicy**.
+
+## Finanse (wywiad 02.10.2026, blok B)
+
+- Księgowość: **biuro rachunkowe**.
+- Claude jako „drugie oko”: koszt pracownika / RBH, decyzje podatkowe (zawsze skill
+  `kontrola-podatkowa`), opłacalność zleceń i umów serwisowych, płynność.
+- Przypominać: przeglądy z umów serwisowych, kontrole szczelności F-gaz, podatki i ZUS.
+- **DOCELOWY MODEL DANYCH FINANSOWYCH: foldery z plikami źródłowymi** (np. eksporty z KSeF)
+  → na tej bazie budujemy własne oprogramowanie (zestawienia, koszt zlecenia, płynność).
+  Pliki źródłowe są nienaruszalne; programy je tylko czytają.
 
 ## Jak pracuje
 
