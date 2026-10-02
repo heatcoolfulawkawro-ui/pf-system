@@ -11,7 +11,7 @@
   wyceny i oferty, a do tego teren/serwis. Wspólnicy: każdy ma swój obszar (kto co: ?).
 - Struktura firm (wywiad 02.10.2026, blok B):
   - **SP CS sp. z o.o.** (nazwa robocza) — główna spółka OPERACYJNA, 3 wspólników.
-    Czy to ten sam podmiot co marka RA-STER: ? (do potwierdzenia)
+    RA-STER to NIE jest SP CS (czym jest RA-STER względem spółek: ? — do wyjaśnienia).
   - **SP HNC sp. z o.o.** — spółka Szefa, PODWYKONAWCA SP CS. Każdy wspólnik ma swój podmiot:
     (1) narzędzie do fakturowania spółki głównej, (2) możliwość robienia zleceń, których
     spółka główna nie może się podjąć. Teksty ustaw: `I:\HNC FIRMA\20_USTAWY\`.
@@ -41,6 +41,10 @@
 - **DOCELOWY MODEL DANYCH FINANSOWYCH: foldery z plikami źródłowymi** (np. eksporty z KSeF)
   → na tej bazie budujemy własne oprogramowanie (zestawienia, koszt zlecenia, płynność).
   Pliki źródłowe są nienaruszalne; programy je tylko czytają.
+  - Zakres: dane **SP CS** (spółka główna). SP HNC i podmioty pozostałych 2 wspólników to
+    podmioty podrzędne — nie w tej bazie.
+  - Miejsce: **osobny folder na dysku `I:` dla SP CS** (PC Szefa). Claude w chmurze go NIE
+    widzi — praca na tych danych przez Claude na PC. Struktura folderów: do zaprojektowania.
 
 ## Jak pracuje
 
