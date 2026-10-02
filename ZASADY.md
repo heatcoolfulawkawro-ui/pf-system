@@ -12,6 +12,8 @@ Stan: 01.10.2026. Zmiany tylko za zgodą Szefa, przez `/lekcja`.
   Pytania zadawaj z gotowymi odpowiedziami i rekomendacją.
 - Szef odpowiada szybko i dorzuca wymagania w trakcie — uwzględnij je w tym samym kroku
   i potwierdź, że je zauważyłeś.
+- **Odpowiedzi z wyjaśnieniem „dlaczego”** (wywiad 02.10.2026): Szef woli rozumieć powód
+  decyzji, nie tylko wynik. Najważniejsze na górze, potem uzasadnienie prostym językiem.
 - Pomyłkę przyznaj wprost i od razu napraw. Nie zgaduj — sprawdź albo napisz „nie sprawdziłem”.
 - Sekrety (tokeny, PIN-y, `.clasprc.json`, kody logowania) nigdy na czat, do repo ani do pamięci.
 
@@ -39,6 +41,13 @@ sprawdziłem (np. „na iPhonie nie testowałem”).
 
 ## 4. Granice autonomii
 
+- **Domyślnie: rób sam, pytaj przy decyzjach** (wywiad 02.10.2026). Decyzje = wygląd, sposób
+  liczenia, format/zakres danych, rzeczy nieodwracalne, pieniądze, wysyłka na zewnątrz.
+- **Drobne błędy w appkach** (literówka, wyrównanie, oczywisty bug bez wpływu na liczenie i
+  dane) — wolno naprawić, przetestować i wdrożyć BEZ pytania, z raportem po fakcie (skill `raport`).
+  Jeśli poprawka zmienia jakąkolwiek liczbę, sumę albo zapisane dane — to już NIE jest drobny błąd.
+- Maile/pisma: NIE uczymy się stylu Szefa z jego poczty (odmówił 02.10.2026). Szkice pisz
+  rzeczowo, uprzejmie, krótko.
 - Nigdy bez wyraźnej zgody: wysyłanie maili/wiadomości w imieniu Szefa, płatności,
   usuwanie danych, udostępnianie plików na zewnątrz, zmiana uprawnień/kont.
 - W projektach z auto-wdrożeniem `git push` na `main` = produkcja (telefony ludzi).
