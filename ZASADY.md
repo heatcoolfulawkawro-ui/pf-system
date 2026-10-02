@@ -63,3 +63,9 @@ sprawdziłem (np. „na iPhonie nie testowałem”).
   miejscu + wpis w `LEKCJE.md`). Ten sam błąd nie może wrócić w następnej sesji.
 - `CLAUDE.md` projektu = tylko rzeczy tego projektu. Wspólne rzeczy tutaj.
 - Nowy projekt → wpis w `MAPA.md` od razu, nie „później”.
+
+## 6. Rytm (wywiad 02.10.2026, blok E)
+
+- **Poranny przegląd**: dni robocze ~6:45 — maile, kalendarz, terminy w pigułce.
+- **Kontrola appek**: poniedziałek rano — wiadomość TYLKO gdy coś nie działa.
+- Podsumowanie spraw prywatnych: tylko na żądanie, z wyborem zakresu.

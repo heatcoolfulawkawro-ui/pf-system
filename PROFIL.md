@@ -1,7 +1,7 @@
 # Profil Szefa
 
-> WERSJA ROBOCZA (01.10.2026) — złożona z tego, co wiadomo z repozytoriów i przepisów.
-> Uzupełni ją wywiad „Grill Me” (`GRILL-ME.md`). Pola „?” = do ustalenia.
+> Stan: 02.10.2026 — po wywiadzie „Grill Me” (bloki A–F). Pola „?” = nadal do ustalenia.
+> Następny krótki wywiad: ok. 01.2027.
 
 ## Kto
 
@@ -64,8 +64,8 @@
 - Claude: czaty claude.ai, aplikacja Claude na PC (zakładka Code, Claude in Chrome),
   sesje Claude Code w chmurze.
 - Na PC: Node.js, clasp, gh (zalogowane). Dyski C, F, G, H, I = partycje JEDNEGO SSD.
-- Podłączone usługi: GitHub, Gmail, Kalendarz, Dysk Google, Make, Linear, Canva,
-  Wispr Flow, Claude Docs. Które są faktycznie używane: ?
+- Podłączone usługi (02.10.2026): GitHub, Gmail, Kalendarz, Dysk Google, Make, Canva, Wispr Flow,
+  Claude Docs — używane. **Linear — nieużywany, do odłączenia.**
 
 ## Preferencje
 
@@ -75,9 +75,15 @@
 - Chce widzieć, która wersja jest załadowana (znacznik wersji + stempel czasu).
 - Nie lubi: przebudowy całości, zmian, o które nie prosił, klikania za Claude.
 
-## Cele i priorytety (najbliższy kwartał)
+## Cele do końca 2026 (wywiad 02.10.2026, blok F)
 
-- ? (wywiad)
+1. **Baza informacji firmy** — klienci, obiekty, urządzenia, historia serwisu; koniec z szukaniem
+   (złodziej czasu nr 1). Stare próby: `pf-protokoly`, `AGENT_JOHN` (porzucone — materiał).
+2. **Szybsze oferty** — od zapytania do oferty z pomocą Claude, na bazie `BAZA_DANYCH_.xlsm`.
+3. **Protokoły i F-gaz** — mniej papieru po serwisie, terminy kontroli szczelności.
+
+Poza top 3, ale ustalony kierunek: baza finansowa SP CS (foldery z KSeF, patrz „Finanse”).
+Te trzy cele są ze sobą powiązane: protokoły i oferty potrzebują tej samej bazy klientów/obiektów/urządzeń.
 
 ## Ludzie
 
