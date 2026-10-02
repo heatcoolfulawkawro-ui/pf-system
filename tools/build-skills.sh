@@ -13,10 +13,11 @@ for dir in skille/*/; do
   name=$(basename "$dir")
   sum=$(cd skille && find "$name" -type f ! -name '.*' -print0 | sort -z | xargs -0 sha256sum | sha256sum | cut -c1-16)
   stamp="dist/$name.sha"
-  rm -f "dist/$name.zip"
-  (cd skille && zip -qr "../dist/$name.zip" "$name" -x '*/.*')
-  # dist/*.sha są w repo: pamiętają stan ostatnio zbudowanych (= wgranych) paczek
-  if [ "$(cat "$stamp" 2>/dev/null)" != "$sum" ]; then
+  # dist/*.zip i *.sha są w repo (Szef pobiera paczki z GitHuba / z klonu na PC);
+  # paczkę budujemy od nowa tylko, gdy zmieniła się treść skilla
+  if [ ! -f "dist/$name.zip" ] || [ "$(cat "$stamp" 2>/dev/null)" != "$sum" ]; then
+    rm -f "dist/$name.zip"
+    (cd skille && zip -qr "../dist/$name.zip" "$name" -x '*/.*')
     echo "$sum" > "$stamp"
     changed+=("$name")
   fi
