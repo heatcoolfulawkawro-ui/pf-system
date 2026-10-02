@@ -66,6 +66,10 @@ sprawdziłem (np. „na iPhonie nie testowałem”).
 
 ## 6. Rytm (wywiad 02.10.2026, blok E)
 
-- **Poranny przegląd**: dni robocze ~6:45 — maile, kalendarz, terminy w pigułce.
-- **Kontrola appek**: poniedziałek rano — wiadomość TYLKO gdy coś nie działa.
+- **Poranny przegląd**: dni robocze 6:45 — maile, kalendarz, terminy w pigułce (skill `morning`).
+  Zakłada go Szef w claude.ai → Scheduled (zadanie z sesji Claude Code nie dostaje Gmaila i
+  Kalendarza — sprawdzone 02.10.2026). Treść polecenia: `START-NA-PC.md` → sekcja „Poranny przegląd”.
+- **Kontrola appek**: poniedziałek 7:12 (Routine „Kontrola appek PF (poniedziałek)”,
+  `trig_01A1wPsEfTNj7PhD96xnhSoY`, powiadomienie push) — curl stron i backendów; raport tylko przy
+  awarii. Nowa appka → dopisać jej adresy do polecenia tego zadania.
 - Podsumowanie spraw prywatnych: tylko na żądanie, z wyborem zakresu.
