@@ -7,16 +7,19 @@
 
 - Paweł (w przepisach też „Pablo”), skrót **PF**. Zwracać się: „Szefie”.
 - Inżynier, branża HVAC / chłodnictwo. Nie programista.
-- Firma **RA-STER**: Szef + 2 wspólników + 4 serwisantów. Rola Szefa: **mieszana** — zarząd,
+- Działalność: 3 wspólników (Szef + 2) + 4 serwisantów. Rola Szefa: **mieszana** — zarząd,
   wyceny i oferty, a do tego teren/serwis. Wspólnicy: każdy ma swój obszar (kto co: ?).
 - Struktura firm (wywiad 02.10.2026, blok B):
   - **SP CS sp. z o.o.** (nazwa robocza) — główna spółka OPERACYJNA, 3 wspólników.
-    RA-STER to NIE jest SP CS (czym jest RA-STER względem spółek: ? — do wyjaśnienia).
+    Główny ciężar działalności PRZENOSI SIĘ na SP CS.
+  - **RA-STER** — firma jednego ze wspólników, w której wspólnicy byli/są zatrudnieni.
+    Zostaje jako jeden z 3 podmiotów fakturujących spółkę główną. (Appki „RA-STER”, np. karta
+    godzin, powstały w czasach RA-STER — przy nowych narzędziach firmowych pytać, czy dotyczą SP CS.)
   - **SP HNC sp. z o.o.** — spółka Szefa, PODWYKONAWCA SP CS. Każdy wspólnik ma swój podmiot:
     (1) narzędzie do fakturowania spółki głównej, (2) możliwość robienia zleceń, których
     spółka główna nie może się podjąć. Teksty ustaw: `I:\HNC FIRMA\20_USTAWY\`.
 
-## RA-STER (wywiad 02.10.2026, blok A)
+## Działalność (wywiad 02.10.2026, blok A)
 
 - Zakres: **kotłownie, klimatyzacja, chłodnictwo, pompy ciepła, wentylacja**.
 - Klienci: firmy z umowami serwisowymi, firmy (zlecenia jednorazowe), instytucje / przetargi.
@@ -45,6 +48,14 @@
     podmioty podrzędne — nie w tej bazie.
   - Miejsce: **osobny folder na dysku `I:` dla SP CS** (PC Szefa). Claude w chmurze go NIE
     widzi — praca na tych danych przez Claude na PC. Struktura folderów: do zaprojektowania.
+
+## Sprawy prywatne (wywiad 02.10.2026, blok C)
+
+- W appkach prywatnych najważniejsze: **wspólne finanse z rodziną** (żona i Zuzia widzą to samo).
+- Podsumowanie miesięczne: **na żądanie**, z wyborem, co ma wejść w danym miesiącu
+  (wydatki / gotówka / paliwo / waga) — bez automatycznej wysyłki.
+- Auta: **hybrydowo** — część prywatnych, część firmowych; Paliwo PF ma dwie sekcje
+  (firmowe → koszty firmy, prywatne → domowe). Nie mieszać ich w zestawieniach.
 
 ## Jak pracuje
 

@@ -9,7 +9,7 @@ przegląd. Właściciel GitHub: `heatcoolfulawkawro-ui`. Adres appek:
 | Projekt | Repo | Do czego | Kto używa | Stan / uwagi |
 |---|---|---|---|---|
 | Karta godzin | `karta-godzin` | godziny pracy, eksport do Excela, konta + PIN, panel admina | Szef + serwisanci | v1.6.1, produkcja; najbardziej rozbudowana |
-| Paliwo PF | `Paliwo-PF` | tankowania i koszty samochodu | Szef | produkcja; brak `CLAUDE.md` (tylko README) |
+| Paliwo PF | `Paliwo-PF` | tankowania i koszty aut — 2 sekcje: firmowe i prywatne | Szef | produkcja; brak `CLAUDE.md` (tylko README) |
 | Waga PF | `Waga-PF` | pomiary masy ciała (profile), trening, przypomnienia w Kalendarzu | rodzina | produkcja |
 | Wydatki domowe | `wydatki-domowe` | budżet domowy, paragony → Gemini | Szef + żona | v0.4+, produkcja |
 | Gotówka PF | `gotowka-pf` | pula gotówki, ile zostało, rytm wydawania | Paweł, Zuzia | produkcja |
